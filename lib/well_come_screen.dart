@@ -20,7 +20,15 @@ class WellComeScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   CircleAvatar(
-                    backgroundImage: NetworkImage("https://imgs.search.brave.com/" "3HAde16jBQmN3b3n0j6sQFWMRiGf3jPvaX74HclqHGI/" "rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/" "cy5jb20vaWQvMTQw/Mzk3MzQxOS9waG90/by90YWJsZS10b3At/" "b2YtZm9vZC1zcHJl/YWQtb24tdGFibGUu/anBnP3M9NjEyeDYx/" "MiZ3PTAmaz0yMCZj/PTJjUk9VTXVyWlV0/dXZxRi1icDhsVmla/" "MHdEWEJOa1pCY0lq/UWoyUVFsZWM9"),
+                    backgroundImage: NetworkImage(
+                      "https://imgs.search.brave.com/"
+                      "3HAde16jBQmN3b3n0j6sQFWMRiGf3jPvaX74HclqHGI/"
+                      "rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/"
+                      "cy5jb20vaWQvMTQw/Mzk3MzQxOS9waG90/by90YWJsZS10b3At/"
+                      "b2YtZm9vZC1zcHJl/YWQtb24tdGFibGUu/anBnP3M9NjEyeDYx/"
+                      "MiZ3PTAmaz0yMCZj/PTJjUk9VTXVyWlV0/dXZxRi1icDhsVmla/"
+                      "MHdEWEJOa1pCY0lq/UWoyUVFsZWM9",
+                    ),
                     radius: 150,
                   ),
 
@@ -28,9 +36,10 @@ class WellComeScreen extends StatelessWidget {
                     padding: const EdgeInsets.only(top: 40),
                     child: Text(
                       "Well Come To Amar Dokan",
-                      style: TextStyle(color: Colors.black, fontSize: 28,
-                        fontWeight: FontWeight.bold
-
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 28,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
@@ -39,7 +48,7 @@ class WellComeScreen extends StatelessWidget {
             ),
 
             Padding(
-              padding: const EdgeInsets.only(top: 50),
+              padding: const EdgeInsets.only(top: 30),
               child: Align(
                 alignment: Alignment.centerRight,
                 child: Text(
@@ -50,14 +59,21 @@ class WellComeScreen extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(right: 20, left: 20, top: 80),
+              padding: const EdgeInsets.only(
+                right: 20,
+                left: 20,
+                top: 60,
+                bottom: 15,
+              ),
               child: SizedBox(
                 height: 50,
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
-
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => LoginScreen()),
+                    );
                   },
                   child: Text(
                     "GET START",
@@ -66,7 +82,6 @@ class WellComeScreen extends StatelessWidget {
                 ),
               ),
             ),
-
           ],
         ),
       ),
