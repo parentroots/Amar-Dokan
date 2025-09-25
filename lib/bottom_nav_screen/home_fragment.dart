@@ -1,3 +1,4 @@
+import 'package:amar_dokan/product_details_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeFragment extends StatefulWidget {
@@ -47,7 +48,13 @@ class _HomeFragmentState extends State<HomeFragment> {
                         fontSize: 22
                       ),),
                     ),
-                    CircleAvatar(child:Icon( Icons.notifications,),)
+                    GestureDetector(
+                      onTap: (){
+
+                      },
+                      child: CircleAvatar(
+                        child:Icon( Icons.notifications,),),
+                    )
                   ],
                 ),
               ),
@@ -212,10 +219,15 @@ class _HomeFragmentState extends State<HomeFragment> {
                           children: [
                             ClipRRect(
                              borderRadius:BorderRadius.circular(15),
-                              child: Image.network(
-                                height: 100,
-                                  width: 90,
-                                  "https://imgs.search.brave.com/B-o0SptzMCqlFBC1CdWXAHHJcxaYxsFDwpbfqY8vY24/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzEzLzgxLzI3Lzgy/LzM2MF9GXzEzODEy/NzgyOTdfZGZyRWJG/Slk0OFJsS09yYUJq/R2h3RXdXV1lyVkhO/VzQuanBn"),
+                              child: GestureDetector(
+                                onTap: (){
+                                  Navigator.push(context,MaterialPageRoute(builder: (context)=>ProductDetailsScreen()));
+                                },
+                                child: Image.network(
+                                  height: 100,
+                                    width: 90,
+                                    "https://imgs.search.brave.com/B-o0SptzMCqlFBC1CdWXAHHJcxaYxsFDwpbfqY8vY24/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzEzLzgxLzI3Lzgy/LzM2MF9GXzEzODEy/NzgyOTdfZGZyRWJG/Slk0OFJsS09yYUJq/R2h3RXdXV1lyVkhO/VzQuanBn"),
+                              ),
                             ),
 
                             Text("Pizza",style: TextStyle(
