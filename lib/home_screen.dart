@@ -27,9 +27,6 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Home Screen",style: TextStyle(color: Colors.white),),
-      ),
 
       body: IndexedStack(
         index: _currentIndex,
@@ -54,13 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
             BottomNavigationBarItem( icon: Icon(Icons.person),label:"Profile"),
           ]
     ),
-      drawer: Drawer(
-        child: ListView(
-          children: [
-            UserAccountsDrawerHeader(accountName: Text("Nazmul"), accountEmail: Text("evu@gmail.com"))
-          ],
-        ),
-      ),
+
 
 
     );
