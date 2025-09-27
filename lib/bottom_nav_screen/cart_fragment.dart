@@ -1,3 +1,4 @@
+import 'package:amar_dokan/bottom_nav_screen/order_confirm_page.dart';
 import 'package:flutter/material.dart';
 
 class CartFragment extends StatefulWidget {
@@ -9,7 +10,6 @@ class CartFragment extends StatefulWidget {
 
 class _CartFragmentState extends State<CartFragment> {
 
-  int _counter=0;
 
 
   @override
@@ -86,7 +86,6 @@ class _CartFragmentState extends State<CartFragment> {
                                     child: GestureDetector(
 
                                       onTap: (){
-                                        _increaseFoodItem();
                                       },
 
                                       child: CircleAvatar(
@@ -95,7 +94,7 @@ class _CartFragmentState extends State<CartFragment> {
                                   ),
 
                                  SizedBox(width: 5,),
-                                 Text(_counter.toString(),style: TextStyle(
+                                 Text("0",style: TextStyle(
                                    color: Colors.white,
                                    fontSize: 20
                                  ),),
@@ -106,7 +105,6 @@ class _CartFragmentState extends State<CartFragment> {
                                    height: 30,
                                      child: GestureDetector(
                                          onTap: (){
-                                           _decreaseFoodItem();
                                          },
                                          child: CircleAvatar(child: Icon(Icons.delete),)))
                                ],
@@ -124,13 +122,109 @@ class _CartFragmentState extends State<CartFragment> {
               },
             ),
           ),
+
+
+          Padding(
+            padding: const EdgeInsets.only(top: 30),
+            child: Container(
+              height: 120,
+              width: 300,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12),
+                color: Colors.blue
+              ),
+              child: Column(
+                children: [
+
+
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10,right: 10,top: 5),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text("Subtotal",style: TextStyle(
+                          fontSize: 22,
+                          color: Colors.white
+                        ),),
+                        Text("\$50",style: TextStyle(
+                          fontSize: 22,
+                          color: Colors.white
+                        ),)
+                      ],
+                    ),
+                  ),
+                  Divider(
+                    height: 2,
+                    color: Colors.black,
+                  ),
+
+
+
+
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10,right: 10,top: 5),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text("Deliver charge",style: TextStyle(
+                            fontSize: 22,
+                            color: Colors.white
+                        ),),
+                        Text("\$10",style: TextStyle(
+                            fontSize: 22,
+                            color: Colors.white
+                        ),)
+                      ],
+                    ),
+                  ),
+                  Divider(
+                    height: 2,
+                    color: Colors.black,
+                  ),
+
+
+
+
+
+
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10,right: 10,top: 5),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text("Total",style: TextStyle(
+                            fontSize: 22,
+                            color: Colors.white
+                        ),),
+                        Text("\$60",style: TextStyle(
+                            fontSize: 22,
+                            color: Colors.white
+                        ),)
+                      ],
+                    ),
+                  ),
+                  Divider(
+                    height: 2,
+                    color: Colors.black,
+                  ),
+
+
+
+                ],
+
+              ),
+            ),
+          ),
           
           SizedBox(
               height: 100,
               width: double.maxFinite,
               child: Padding(
-                padding: const EdgeInsets.all(30),
-                child: ElevatedButton(onPressed: (){}, child: Text("Checkout",style: TextStyle(
+                padding: const EdgeInsets.all(20),
+                child: ElevatedButton(onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>OrderConfirmPage()));
+
+                }, child: Text("Checkout",style: TextStyle(
                   color: Colors.white,
                   fontSize: 20
                 ),)),
@@ -141,23 +235,6 @@ class _CartFragmentState extends State<CartFragment> {
   }
 
 
-
-  void _increaseFoodItem() {
-    _counter = _counter + 1;
-    if (_counter == 100) {
-      _counter = 0;
-    }
-    setState(() {});
-  }
-
-  void _decreaseFoodItem() {
-    _counter = _counter - 1;
-
-    if (_counter < 1) {
-      _counter = 0;
-    }
-    setState(() {});
-  }
 
 
 
